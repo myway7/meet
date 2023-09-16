@@ -52,10 +52,10 @@ const Home: NextPage = () => {
   }
   return (
     <>
-      <Head>
+{/*       <Head>
         <title>LiveKit Meet</title>
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </Head> */}
 
       <main data-lk-theme="default">
         {roomName && !Array.isArray(roomName) && preJoinChoices ? (
