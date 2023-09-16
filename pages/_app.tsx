@@ -7,7 +7,7 @@ import { DefaultSeo } from 'next-seo';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <DefaultSeo
+      {/* <DefaultSeo
         title="LiveKit Meet | Conference app build with LiveKit Open Source"
         titleTemplate="%s"
         defaultTitle="LiveKit Meet | Conference app build with LiveKit open source"
@@ -51,7 +51,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             color: '#070707',
           },
         ]}
-      />
+      /> */}
       <Component {...pageProps} />
     </>
   );
