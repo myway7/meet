@@ -44,7 +44,7 @@ function DemoMeetingTab({ label }: { label: string }) {
   };
   return (
     <div className={styles.tabContent}>
-      <p style={{ margin: 0 }}>Let's have a free and open conversation together</p>
+      <p style={{ margin: 0 }}>Let's have a free and open conversation together.</p>
       <button style={{ marginTop: '1rem' }} className="lk-button" onClick={startMeeting}>
         Start Meeting
       </button>
