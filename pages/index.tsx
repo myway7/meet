@@ -1,4 +1,3 @@
-import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { useRouter } from 'next/router';
 import React, { ReactElement, useState } from 'react';
 import styles from '../styles/Home.module.css';
@@ -128,16 +127,9 @@ function CustomConnectionTab({ label }: { label: string }) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps<{ tabIndex: number }> = async ({
-  query,
-  res,
-}) => {
-  res.setHeader('Cache-Control', 'public, max-age=7200');
-  const tabIndex = query.tab === 'custom' ? 1 : 0;
-  return { props: { tabIndex } };
-};
 
-const Home = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+
+const Home = () => {
   const router = useRouter();
   function onTabSelected(index: number) {
     const tab = index === 1 ? 'custom' : 'demo';

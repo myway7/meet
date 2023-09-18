@@ -4,15 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+     "export":"next export"
   },
   "dependencies": {
     "@livekit/components-react": "1.2.0",
     "@livekit/components-styles": "1.0.6",
     "livekit-client": "1.13.3",
-    "livekit-server-sdk": "../server-sdk-js",
+    "livekit-server-sdk": "git+https://github.com/myway7/server-sdk-js.git#dev",
     "next": "12.3.4",
     "lru-cache": "^9.0.1",
     "next-seo": "^6.0.0",

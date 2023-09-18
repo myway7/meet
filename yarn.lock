@@ -1646,8 +1646,9 @@ livekit-client@1.13.3:
     typed-emitter "^2.1.0"
     webrtc-adapter "^8.1.1"
 
-livekit-server-sdk@../server-sdk-js:
+"livekit-server-sdk@git+https://github.com/myway7/server-sdk-js.git#dev":
   version "1.1.2"
+  resolved "git+https://github.com/myway7/server-sdk-js.git#73fbf908a0c40fda56fa962f7b710419b0352c25"
   dependencies:
     axios "^0.21.0"
     camelcase-keys "^7.0.0"

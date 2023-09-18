@@ -15,12 +15,7 @@ const nextConfig = {
     ];
     return config;
   },
-  generateBuildId: async () => {
-    // You can, for example, get the latest git commit hash here
-    return 'v1'
-  },
-output: 'export',
-distDir: 'dist',
+  distDir: 'dist',
 };
 
 module.exports = nextConfig;
