@@ -14,3 +14,10 @@ export interface TokenResult {
   identity: string;
   accessToken: string;
 }
+
+export interface RoomMetadata  {
+  passwd: string,
+  time: number,
+  maxParticipants: number,
+  videoShareUrl?: string
+}

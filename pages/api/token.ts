@@ -19,6 +19,8 @@ const roomPattern = /\w{4}\-\w{4}/;
 export default async function handleToken(req: NextApiRequest, res: NextApiResponse) {
   try {
     const { roomName, identity, name, metadata } = req.query;
+    console.log("参数")
+    console.log({ roomName, identity, name, metadata })
 
     if (typeof identity !== 'string' || typeof roomName !== 'string') {
       res.status(403).end();
