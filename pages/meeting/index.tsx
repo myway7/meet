@@ -81,7 +81,7 @@ const Home: NextPage = () => {
                 // e2ee: !!e2eePassphrase,
                 // sharedPassphrase: e2eePassphrase || randomString(64),
                 e2ee: true,
-                sharedPassphrase: randomString(64),
+                sharedPassphrase: e2eePassphrase || randomString(64),
               }}
               onSubmit={handlePreJoinSubmit}
               showE2EEOptions={false}

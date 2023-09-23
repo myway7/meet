@@ -5,5 +5,8 @@ module.exports = {
     content: [
       "./pages/**/*.{ts,tsx}",
     ],
+    daisyui: {
+        themes: ["dark", "light", "cupcake"],
+      },
     plugins: [require('daisyui')],
   };
