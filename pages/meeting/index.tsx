@@ -32,6 +32,7 @@ import { AccessToken } from 'livekit-server-sdk';
 import type { AccessTokenOptions, VideoGrant } from 'livekit-server-sdk';
 import { TokenResult } from '../../lib/types';
 import { getToken } from '../../lib/getToken';
+import Layout from '../../components/layout';
 
 const PreJoinNoSSR = dynamic(
   async () => {
@@ -61,8 +62,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head> */}
 
+      <Layout>
+ 
       <main data-lk-theme="default">
-        {roomName && !Array.isArray(roomName) && preJoinChoices ? (
+      {roomName && !Array.isArray(roomName) && preJoinChoices ? (
           <ActiveRoom
             roomName={roomName}
             userChoices={preJoinChoices}
@@ -88,7 +91,9 @@ const Home: NextPage = () => {
             ></PreJoinNoSSR>
           </div>
         )}
-      </main>
+      </main> 
+    
+      </Layout>
     </>
   );
 };

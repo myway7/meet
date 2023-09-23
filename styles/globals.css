@@ -1,14 +1,14 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-/* * {
+* {
   box-sizing: border-box;
-} */
+}
 
-html {
+/* html {
   color-scheme: dark;
   background-color: #111;
-}
+} */
 
 html,
 body,
@@ -18,11 +18,17 @@ main {
   height: 100%;
   margin: 0px;
 }
+/* 
+header {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--lk-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+} */
 
-.header {
-  max-width: 500px;
-  padding-inline: 2rem;
-}
+/* 
 
 .header > img {
   display: block;
@@ -40,17 +46,19 @@ main {
   color: rgba(255, 255, 255, 0.6);
 }
 
-footer {
+header a,
+h2 a {
+  color: #ff6352;
+  text-decoration-color: #a33529;
+  text-underline-offset: 0.125em;
+} */
+
+/* footer {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  padding: 1.5rem 2rem;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.6);
-  background-color: var(--lk-bg);
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-}
-
+} */
+/* 
 footer a,
 h2 a {
   color: #ff6352;
@@ -65,4 +73,4 @@ h2 a {
 
 h2 a {
   text-decoration: none;
-}
+}  */

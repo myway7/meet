@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React, { ReactElement, useEffect, useState } from 'react';
 import styles from '../styles/Home.module.css';
 import { encodePassphrase, generateRoomId, randomString } from '../lib/client-utils';
-import {UserCurrentState} from "../redux/slices"
+import Layout from "../components/layout"
 import { useDispatch, useSelector } from "react-redux";
 
 function DemoMeetingTab({ label }: { label: string }) {
@@ -36,8 +36,11 @@ const Home = () => {
  
   return (
     <>
-      <main className={styles.main}>
-        {/* <div className="header">
+    <Layout>
+    {/* <main className={styles.main}> */}
+        <DemoMeetingTab label="Demo" />
+      {/* </main> */}
+            {/* <div className="header">
           <img src="/images/livekit-meet-home.svg" alt="LiveKit Meet" width="360" height="45" />
           <h2>
             Open source video conferencing app built on{' '}
@@ -55,8 +58,6 @@ const Home = () => {
           <DemoMeetingTab label="Demo" />
           <CustomConnectionTab label="Custom" />
         </Tabs> */}
-        <DemoMeetingTab label="Demo" />
-      </main>
       {/* <footer data-lk-theme="default">
         Hosted on{' '}
         <a href="https://livekit.io/cloud?ref=meet" rel="noopener">
@@ -68,6 +69,7 @@ const Home = () => {
         </a>
         .
       </footer> */}
+    </Layout>
     </>
   );
 };

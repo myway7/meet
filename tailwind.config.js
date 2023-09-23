@@ -4,6 +4,7 @@
 module.exports = {
     content: [
       "./pages/**/*.{ts,tsx}",
+      "./components/**/*.{ts,tsx}",
     ],
     daisyui: {
         themes: ["dark", "light", "cupcake"],
