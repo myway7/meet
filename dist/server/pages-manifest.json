@@ -1,6 +1,11 @@
 {
   "/_app": "pages/_app.js",
+  "/custom": "pages/custom.html",
+  "/": "pages/index.html",
+  "/login": "pages/login.html",
+  "/meeting": "pages/meeting.html",
+  "/register": "pages/register.html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/meeting": "pages/meeting.js"
+  "/404": "pages/404.html"
 }

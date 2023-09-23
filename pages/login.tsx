@@ -4,8 +4,9 @@ import initialState from "../redux/slices"
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { logInUser} from "../redux/slices";
+import type { NextPage } from 'next';
 
-const LoginPage = () => {
+const LoginPage:NextPage = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const onSubmit = () => {

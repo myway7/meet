@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST={"meeting/index.tsx -> @livekit/components-react":{"id":"meeting/index.tsx -> @livekit/components-react","files":[]}}
+self.__REACT_LOADABLE_MANIFEST={"meeting/index.tsx -> @livekit/components-react":{id:3062,files:[]}};
