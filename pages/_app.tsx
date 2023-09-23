@@ -3,10 +3,13 @@ import type { AppProps } from 'next/app';
 import '@livekit/components-styles';
 import '@livekit/components-styles/prefabs';
 import { DefaultSeo } from 'next-seo';
+import { Provider } from "react-redux";
+import  store from "../redux/";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+   <>
+    <Provider store={store}>
       {/* <DefaultSeo
         title="LiveKit Meet | Conference app build with LiveKit Open Source"
         titleTemplate="%s"
@@ -53,7 +56,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         ]}
       /> */}
       <Component {...pageProps} />
-    </>
+    </Provider>   
+   </>
   );
 }
 
