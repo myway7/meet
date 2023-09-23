@@ -15,7 +15,7 @@ const nextConfig = {
     ];
     return config;
   },
-  distDir: 'dist',
+  // distDir: 'dist',
 };
 
 module.exports = nextConfig;
