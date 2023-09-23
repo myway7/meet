@@ -11,12 +11,21 @@ function DemoMeetingTab({ label }: { label: string }) {
     router.push(`/meeting/?roomName=${generateRoomId()}`);
   };
   return (
-    <div className={styles.tabContent}>
-      {/* <p style={{ margin: 0 }}>Try LiveKit Meet for free with our live demo project.</p> */}
-      <button className='btn' onClick={startMeeting}>
-        Start Meeting
-      </button>
+    // <div className={styles.tabContent}>
+    //   {/* <p style={{ margin: 0 }}>Try LiveKit Meet for free with our live demo project.</p> */}
+    //   <button className='btn' onClick={startMeeting}>
+    //     Start Meeting
+    //   </button>
+    // </div>
+    <div className="hero min-h-screen bg-base-200">
+  <div className="hero-content text-center">
+    <div className="max-w-md">
+      <h1 className="text-5xl font-bold">Start collaborating right away</h1>
+      <p className="py-6">Your conversations are protected from eavesdropping by third parties.Our platform is designed to deliver high-quality video and audio, even in poor network conditions.</p>
+      <button className="btn btn-primary" onClick={startMeeting}>Start Meeting</button>
     </div>
+  </div>
+</div>
   );
 }
 
