@@ -61,9 +61,7 @@ const Home: NextPage = () => {
         <title>LiveKit Meet</title>
         <link rel="icon" href="/favicon.ico" />
       </Head> */}
-
       <Layout>
- 
       <main data-lk-theme="default">
       {roomName && !Array.isArray(roomName) && preJoinChoices ? (
           <ActiveRoom
@@ -92,7 +90,6 @@ const Home: NextPage = () => {
           </div>
         )}
       </main> 
-    
       </Layout>
     </>
   );
