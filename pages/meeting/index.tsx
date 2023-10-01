@@ -79,10 +79,10 @@ const Home: NextPage = () => {
                 username: '',
                 videoEnabled: true,
                 audioEnabled: true,
-                // e2ee: !!e2eePassphrase,
-                // sharedPassphrase: e2eePassphrase || randomString(64),
-                e2ee: true,
+                e2ee: !!e2eePassphrase,
                 sharedPassphrase: e2eePassphrase || randomString(64),
+                // e2ee: true,
+                // sharedPassphrase: e2eePassphrase || randomString(64),
               }}
               onSubmit={handlePreJoinSubmit}
               showE2EEOptions={false}
