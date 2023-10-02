@@ -80,7 +80,7 @@ const Home: NextPage = () => {
                 videoEnabled: true,
                 audioEnabled: true,
                 e2ee: true,
-                sharedPassphrase: randomString(64),
+                sharedPassphrase: e2eePassphrase || randomString(64),
                 // e2ee: false,
                 // sharedPassphrase: e2eePassphrase || randomString(64),
               }}
