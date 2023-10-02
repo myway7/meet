@@ -81,7 +81,7 @@ const Home: NextPage = () => {
                 audioEnabled: true,
                 e2ee: !!e2eePassphrase,
                 sharedPassphrase: e2eePassphrase || randomString(64),
-                // e2ee: true,
+                // e2ee: false,
                 // sharedPassphrase: e2eePassphrase || randomString(64),
               }}
               onSubmit={handlePreJoinSubmit}
@@ -155,6 +155,7 @@ useEffect(()=>{
             ? [VideoPresets.h1080, VideoPresets.h720]
             : [VideoPresets.h540, VideoPresets.h216],
         red: !e2eeEnabled,
+        videoCodec:"vp9"
       },
       audioCaptureDefaults: {
         deviceId: userChoices.audioDeviceId ?? undefined,
