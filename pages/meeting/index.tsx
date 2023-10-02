@@ -79,7 +79,7 @@ const Home: NextPage = () => {
                 username: '',
                 videoEnabled: true,
                 audioEnabled: true,
-                e2ee: true,
+                e2ee: false,
                 sharedPassphrase: e2eePassphrase || randomString(64),
                 // e2ee: false,
                 // sharedPassphrase: e2eePassphrase || randomString(64),
