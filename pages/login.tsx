@@ -5,11 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { logInUser} from "../redux/slices";
 import type { NextPage } from 'next';
+import { account } from '../lib/appwrite';
 
 const LoginPage:NextPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const router = useRouter();
   const dispatch = useDispatch();
-  const onSubmit = () => {
+  const onSubmit =  async (email:string, password:string) => {
     const formattedData = {
       id: 11,
       name:"q",
@@ -30,7 +33,9 @@ const LoginPage:NextPage = () => {
       },
     };
     dispatch(logInUser(formattedData));
-    router.push("/");
+    // router.push("/");
+    const session = await account.createEmailSession(email, password);
+    console.log(session)
   };
   const onRegister = ()=>{
     console.log("register")
@@ -46,13 +51,13 @@ const LoginPage:NextPage = () => {
               <label className="label">
                 <span className="label-text">Your email</span>
               </label>
-              <input type="text" placeholder="name@company.com" className="input input-bordered w-full max-w-xs" />
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="name@company.com" className="input input-bordered w-full max-w-xs" />
             </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Your password</span>
               </label>
-              <input type="text" placeholder="••••••••" className="input input-bordered w-full max-w-xs" />
+              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="••••••••" className="input input-bordered w-full max-w-xs" />
             </div>
             <div className="flex items-start w-full">
               <div className="flex items-start">
@@ -64,7 +69,7 @@ const LoginPage:NextPage = () => {
              <a href="#" className="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
             </div>
             <div className="card-actions">
-              <button className="btn btn-outline btn-wide" onClick={onSubmit}>Submit</button>
+              <button className="btn btn-outline btn-wide" onClick={() => onSubmit(email, password)}>Submit</button>
             </div>
             <div className="flex items-start text-sm font-medium text-gray-500 dark:text-gray-300">
             Not registered? <a className="text-blue-700 hover:underline dark:text-blue-500" onClick={onRegister}>Create account</a>
