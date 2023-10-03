@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css';
 import { encodePassphrase, generateRoomId, randomString } from '../lib/client-utils';
 import Layout from "../components/layout"
 import { useDispatch, useSelector } from "react-redux";
+import { Client } from 'appwrite';
 
 function DemoMeetingTab({ label }: { label: string }) {
   const router = useRouter();
@@ -32,10 +33,14 @@ function DemoMeetingTab({ label }: { label: string }) {
 
 const Home = () => {
   const router = useRouter();
+  const client = new Client();
   const {isLoggedIn,user} = useSelector((state:any)=>state.userState);
   useEffect(()=>{
     console.log(isLoggedIn)
     console.log(user)
+    client
+    .setEndpoint('https://cloud.appwrite.io/v1')
+    .setProject('651c3f0c9a7b25ba92ac');
     if(isLoggedIn){
       router.push("/")
     }else{

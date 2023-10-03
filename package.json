@@ -10,9 +10,13 @@
     "export": "next export"
   },
   "dependencies": {
+    "@emoji-mart/data": "^1.1.2",
+    "@emoji-mart/react": "^1.1.1",
     "@livekit/components-react": "1.2.0",
     "@livekit/components-styles": "1.0.6",
     "@reduxjs/toolkit": "^1.9.5",
+    "appwrite": "^13.0.0",
+    "emoji-mart": "^5.5.2",
     "livekit-client": "1.13.4",
     "livekit-server-sdk": "git+https://github.com/myway7/server-sdk-js.git#dev",
     "lru-cache": "^9.0.1",

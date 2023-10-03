@@ -4,7 +4,7 @@ import {
   PreJoin,
   LocalUserChoices,
   useToken,
-  VideoConference,
+  // VideoConference,
   formatChatMessageLinks,
 } from '@livekit/components-react';
 import {
@@ -33,6 +33,7 @@ import type { AccessTokenOptions, VideoGrant } from 'livekit-server-sdk';
 import { TokenResult } from '../../lib/types';
 import { getToken } from '../../lib/getToken';
 import Layout from '../../components/layout';
+import { VideoConference } from '../../components/VideoConference';
 
 const PreJoinNoSSR = dynamic(
   async () => {
