@@ -12,7 +12,7 @@ const LoginPage:NextPage = () => {
   const [password, setPassword] = useState("");
   const router = useRouter();
   const dispatch = useDispatch();
-  const onSubmit =  async (email:string, password:string) => {
+  const onSubmit =  (email:string, password:string) => {
     const formattedData = {
       id: 11,
       name:"q",
@@ -32,10 +32,16 @@ const LoginPage:NextPage = () => {
         bs:"123",
       },
     };
+   account.createEmailSession(email, password).then(res=>{
+    console.log(res)
     dispatch(logInUser(formattedData));
-    // router.push("/");
-    const session = await account.createEmailSession(email, password);
-    console.log(session)
+    router.push("/");
+   }).catch(err=>{
+    console.log("error");
+    console.log(err)
+
+   })
+    // console.log(session)
   };
   const onRegister = ()=>{
     console.log("register")
