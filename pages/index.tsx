@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css';
 import { encodePassphrase, generateRoomId, randomString } from '../lib/client-utils';
 import Layout from "../components/layout"
 import { useDispatch, useSelector } from "react-redux";
-import { Client } from 'appwrite';
+import { account } from '../lib/appwrite';
 
 function DemoMeetingTab({ label }: { label: string }) {
   const router = useRouter();
@@ -34,9 +34,12 @@ function DemoMeetingTab({ label }: { label: string }) {
 const Home = () => {
   const router = useRouter();
   const {isLoggedIn,user} = useSelector((state:any)=>state.userState);
-  useEffect(()=>{
+  useEffect( ()=>{
     console.log(isLoggedIn)
     console.log(user)
+    account.get().then(res=>{
+      console.log(res)
+    })
     if(isLoggedIn){
       router.push("/")
     }else{
