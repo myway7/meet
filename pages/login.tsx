@@ -38,7 +38,7 @@ const LoginPage:NextPage = () => {
     router.push("/");
    }).catch(err=>{
     console.log("error");
-    console.log(err)
+    console.log(err.message)
 
    })
     // console.log(session)
