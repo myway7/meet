@@ -6,10 +6,13 @@ import { useRouter } from "next/router";
 import { logInUser} from "../redux/slices";
 import type { NextPage } from 'next';
 import { account } from '../lib/appwrite';
+import { MyErrorToast } from '../components/Toast';
 
 const LoginPage:NextPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showError, setShowError] = useState<boolean>(false);
+  const [errorMsg, setErrorMsg] = useState<string>("");
   const router = useRouter();
   const dispatch = useDispatch();
   const onSubmit =  (email:string, password:string) => {
@@ -37,8 +40,13 @@ const LoginPage:NextPage = () => {
     dispatch(logInUser(formattedData));
     router.push("/");
    }).catch(err=>{
-    console.log("error");
-    console.log(err.message)
+        console.log("error");
+        setShowError(true)
+        setErrorMsg(err.message)
+        setTimeout(() => {
+          setShowError(false)
+      }, 2000);
+        console.log(err.message)
 
    })
     // console.log(session)
@@ -82,6 +90,11 @@ const LoginPage:NextPage = () => {
         </div>
           </div>
         </div>
+        {
+        showError && <MyErrorToast>
+            {errorMsg}
+        </MyErrorToast>
+        }
       </main>
     </>
   );
