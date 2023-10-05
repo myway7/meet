@@ -1,14 +1,22 @@
 import React from "react";
 import styles from '../../styles/Home.module.css';
 import { useRouter } from "next/router";
+import { account } from "../../lib/appwrite";
+import { useDispatch} from "react-redux";
+import { logOutUser} from "../../redux/slices";
 export interface LayoutProps {
     children?: React.ReactNode;
   }
 const Layout = ({ children}:LayoutProps) => {
     const router = useRouter();
+    const dispatch = useDispatch();
     const onHome=()=>{
         router.push("/")
     }
+  const logout =   async ()=>{
+        dispatch(logOutUser);
+        await account.deleteSession("current");
+      }
     return (
       <>
         <div className="navbar bg-base-100 absolute">
@@ -29,7 +37,7 @@ const Layout = ({ children}:LayoutProps) => {
                     </a>
                     </li>
                     <li><a>Settings</a></li>
-                    <li><a>Logout</a></li>
+                    <li onClick={logout}><a>Logout</a></li>
                 </ul>
                 </div>
             </div>

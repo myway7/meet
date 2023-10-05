@@ -38,13 +38,15 @@ const Home = () => {
     console.log(isLoggedIn)
     console.log(user)
     account.get().then(res=>{
-      console.log(res)
-    })
-    if(isLoggedIn){
       router.push("/")
-    }else{
+    }).catch(()=>{
       router.push("/login")
-    }
+    })
+    // if(isLoggedIn){
+    //   router.push("/")
+    // }else{
+    //   router.push("/login")
+    // }
   },[isLoggedIn,user])
  
   return (
