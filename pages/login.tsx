@@ -12,6 +12,7 @@ const LoginPage:NextPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showError, setShowError] = useState<boolean>(false);
+  const [showLoading, setShowLoading] = useState<boolean>(false);
   const [errorMsg, setErrorMsg] = useState<string>("");
   const router = useRouter();
   const dispatch = useDispatch();
@@ -35,11 +36,14 @@ const LoginPage:NextPage = () => {
         bs:"123",
       },
     };
+    setShowLoading(true);
    account.createEmailSession(email, password).then(res=>{
+    setShowLoading(false);
     console.log(res)
     dispatch(logInUser(formattedData));
     router.push("/");
    }).catch(err=>{
+        setShowLoading(false);
         console.log("error");
         setShowError(true)
         setErrorMsg(err.message)
@@ -83,7 +87,10 @@ const LoginPage:NextPage = () => {
              <a href="#" className="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
             </div>
             <div className="card-actions">
-              <button className="btn btn-outline btn-wide" onClick={() => onSubmit(email, password)}>Submit</button>
+              {
+                showLoading ?  <button className="btn btn-outline btn-wide"><span className="loading loading-spinner"></span>logging in</button>
+                : <button className="btn btn-outline btn-wide" onClick={() => onSubmit(email, password)}>Submit</button>
+              }
             </div>
             <div className="flex items-start text-sm font-medium text-gray-500 dark:text-gray-300">
             Not registered? <a className="text-blue-700 hover:underline dark:text-blue-500" onClick={onRegister}>Create account</a>
