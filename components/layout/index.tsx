@@ -14,6 +14,7 @@ const Layout = ({ children}:LayoutProps) => {
         router.push("/")
     }
   const logout = ()=>{
+    console.log("退出")
         dispatch(logOutUser);
         router.push("/");        
       }
