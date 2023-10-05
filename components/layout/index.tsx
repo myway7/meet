@@ -15,8 +15,9 @@ const Layout = ({ children}:LayoutProps) => {
     }
   const logout =   async ()=>{
         dispatch(logOutUser);
-        await account.deleteSession("current");
         router.push("/");
+        await account.deleteSession("current");
+        
       }
     return (
       <>
