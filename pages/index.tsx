@@ -50,7 +50,7 @@ const Home = () => {
     }).catch((err)=>{
       console.log(err);
       router.push("/login")
-    })},[isLoggedIn])
+    })},[isLoggedIn,user])
  
   return (
     <>
