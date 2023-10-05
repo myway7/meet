@@ -37,16 +37,11 @@ const Home = () => {
   useEffect( ()=>{
     console.log(isLoggedIn)
     console.log(user)
-    account.get().then(res=>{
+    if(isLoggedIn){
       router.push("/")
-    }).catch(()=>{
+    }else{
       router.push("/login")
-    })
-    // if(isLoggedIn){
-    //   router.push("/")
-    // }else{
-    //   router.push("/login")
-    // }
+    }
   },[isLoggedIn,user])
  
   return (
