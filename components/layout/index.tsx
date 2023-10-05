@@ -13,9 +13,10 @@ const Layout = ({ children}:LayoutProps) => {
     const onHome=()=>{
         router.push("/")
     }
-  const logout = ()=>{
-    console.log("退出")
-        dispatch(logOutUser);
+  const logout = async()=>{
+        await account.deleteSession("current");
+        console.log("退出")
+        dispatch(logOutUser());
         router.push("/");        
       }
     return (

@@ -34,15 +34,24 @@ function DemoMeetingTab({ label }: { label: string }) {
 const Home = () => {
   const router = useRouter();
   const {isLoggedIn,user} = useSelector((state:any)=>state.userState);
-  useEffect( ()=>{
-    console.log(isLoggedIn)
-    console.log(user)
-    if(isLoggedIn){
+  // useEffect( ()=>{
+  //   console.log(isLoggedIn)
+  //   console.log(user)
+  //   if(isLoggedIn){
+  //     router.push("/")
+  //   }else{
+  //     router.push("/login")
+  //   }
+  // },[isLoggedIn])
+  useEffect(()=>{
+    account.get().then((res)=>{
+      console.log(res)
       router.push("/")
-    }else{
+    }).catch((err)=>{
+      console.log(err);
       router.push("/login")
-    }
-  },[isLoggedIn,user])
+    })}
+  )
  
   return (
     <>

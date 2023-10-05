@@ -63,6 +63,7 @@ export  const userSlice = createSlice({
       state.user = action.payload;
     },
     logOutUser: (state) => {
+      console.log("logOutUser")
       state.isLoggedIn = false;
       state.user = undefined;
     },
