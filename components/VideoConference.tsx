@@ -9,7 +9,6 @@ import {
   LayoutContextProvider,
   useCreateLayoutContext,
   RoomAudioRenderer,
-  ControlBar,
   FocusLayout,
   FocusLayoutContainer,
   ConnectionStateToast,
@@ -20,6 +19,7 @@ import {
   ParticipantTile,
 } from '@livekit/components-react';
 import { Chat } from './Chat';
+import { ControlBar } from './ControlBar';
 
 import { isEqualTrackRef, isTrackReference,isWeb,log} from '@livekit/components-core';
 import { RoomEvent, Track } from 'livekit-client';
@@ -139,7 +139,7 @@ export interface VideoConferenceProps extends React.HTMLAttributes<HTMLDivElemen
                   </FocusLayoutContainer>
                 </div>
               )}
-              <ControlBar controls={{ chat: true }} />
+              <ControlBar controls={{ chat: true,shareURL:true }} />
             </div>
             <Chat
             style={{ display: widgetState.showChat ? 'flex' : 'none' }}

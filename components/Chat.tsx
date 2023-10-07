@@ -1,5 +1,5 @@
 import type { ChatMessage, MessageEncoder, MessageDecoder } from '@livekit/components-core';
-import * as React from 'react';
+import * as React from 'react'
 import { useMaybeLayoutContext } from '@livekit/components-react';
 import type { MessageFormatter } from '@livekit/components-react';
 import { ChatEntry } from './ChatEntry';
